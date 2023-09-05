@@ -20,7 +20,7 @@ SO THAT my company can compete with other e-commerce companies
 
 ```md
 GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
+WHEN I add my database name, MySQL username, and MySQL password to an environment variable file //DONE
 THEN I am able to connect to a database using Sequelize
 WHEN I enter schema and seed commands
 THEN a development database is created and is seeded with test data
@@ -60,7 +60,7 @@ Use the `schema.sql` file in the `db` folder to create your database with MySQL 
 
 Your database should contain the following four models, including the requirements listed for each model:
 
-* `Category`
+* `Category` //DONE
 
   * `id`
 
@@ -78,7 +78,7 @@ Your database should contain the following four models, including the requiremen
   
     * Doesn't allow null values.
 
-* `Product`
+* `Product` //Need Associations
 
   * `id`
   
