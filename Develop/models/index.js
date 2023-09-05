@@ -18,3 +18,6 @@ module.exports = {
   Tag,
   ProductTag,
 };
+
+
+//Associations Here!^
