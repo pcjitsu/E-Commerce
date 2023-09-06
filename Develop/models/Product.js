@@ -58,8 +58,3 @@ module.exports = Product;
 
 
 
-// * `category_id`
-  
-// * Integer.
-
-// * References the `Category` model's `id`.
