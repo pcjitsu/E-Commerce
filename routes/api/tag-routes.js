@@ -7,19 +7,23 @@ router.get('/', async (req, res) => {
   // find all tags
   // be sure to include its associated Product data
   try{
-  const tagData = await Tag.findAll({include: [
-    {
-        model: Product,
-        attributes: ['product_name']
-    },
-    {
-        model: ProductTag,
-        attributes: ['product_id', 'tag_id']
-    }  
-  ]});
-  res.json(tagDataData);
-}
+    const tagData = await Tag.findAll(
+      {include: [
+        {
+            model: Product,
+            through: ProductTag,
+          //  attributes: ['product_name']
+        },
+       /* {
+            model: ProductTag,
+            attributes: ['product_id', 'tag_id']
+        }  */
+      ]}
+    ); 
+    res.json(tagData);
+  }
   catch (err) {
+    console.log("Error: ", err);
     res.status(500).json(err);
   }
   });
@@ -30,15 +34,11 @@ router.get('/:id', async (req, res) => {
   try{
   const singleTagData = await Tag.findByPk(req.params.id, {include: [ {
     model: Product,
-    attributes: ['product_name'] 
-},
-{
-    model: ProductTag,
-    attributes: ['product_id', 'tag_id']
+    through: ProductTag,
 
 }
 ]});
-res.json(categoryData);
+res.json(singleTagData);
   }
   catch (err) {
     res.status(500).json(err);
